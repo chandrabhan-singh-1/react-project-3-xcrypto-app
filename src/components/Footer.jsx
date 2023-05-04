@@ -19,9 +19,10 @@ const Footer = () => {
               letterSpacing={"widest"}
               textAlign={["center", "center", "left"]}
             >
-              We are the best crypto trading app in India.
-              <br /> We provide our guidance to more than 1,00,000+ Crypto
-              Traders in India.
+              We are the best crypto currency related info-sharing webapp in
+              India.
+              <br /> We provide our guidance and information to more than
+              1,00,000+ Crypto Traders in India.
             </Text>
           </VStack>
 
@@ -30,7 +31,7 @@ const Footer = () => {
             <Text textAlign={"center"}>
               CHANDRABHAN SINGH
               <br />
-              Founder
+              Creator
             </Text>
           </VStack>
         </Stack>
