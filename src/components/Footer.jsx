@@ -21,8 +21,8 @@ const Footer = () => {
             >
               We are the best crypto currency related info-sharing webapp in
               India.
-              <br /> We provide our guidance and information to more than
-              1,00,000+ Crypto Traders in India.
+              <br /> We provide our guidance to more than 1,00,000+ Crypto
+              Traders in India.
             </Text>
           </VStack>
 
