@@ -28,7 +28,7 @@ const Coins = () => {
     setLoading(true);
   };
 
-  const btns = new Array(132).fill(1);
+  const btns = new Array(30).fill(1);
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -50,61 +50,58 @@ const Coins = () => {
   if (error) return <ErrorComponent message={"Error while fetching Coins."} />;
 
   return (
-    <>
-      <Container maxW={"container.xl"}>
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <RadioGroup value={"currency"} onChange={setCurrency} p={"4"}>
-              <HStack spacing={"4"}>
-                <Radio value={"inr"}>INR</Radio>
-                <Radio value={"usd"}>USD</Radio>
-                <Radio value={"eur"}>EUR</Radio>
-              </HStack>
-            </RadioGroup>
+    <Container maxW={"container.xl"}>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <RadioGroup value={"currency"} onChange={setCurrency} p={"4"}>
+            <HStack spacing={"4"}>
+              <Radio value={"inr"}>INR</Radio>
+              <Radio value={"usd"}>USD</Radio>
+              <Radio value={"eur"}>EUR</Radio>
+            </HStack>
+          </RadioGroup>
 
-            <HStack wrap={"wrap"} py={"4"} justifyContent={"space-evenly"}>
-              {coins.map((i) => (
-                <CoinCard
-                  id={i.id}
-                  key={i.id}
-                  name={i.name}
-                  image={i.image}
-                  price={i.current_price}
-                  symbol={i.symbol}
-                  currencySymbol={currencySymbol}
-                />
-              ))}
-            </HStack>
-            <Text
-              textAlign={"center"}
-              fontWeight={"bold"}
-              textDecoration={"underline"}
-              color={"red"}
-            >
-              {page}
-            </Text>
-            <HStack w={"full"} px={"8"} py={"4"} overflowX={"scroll"}>
-              {btns.map((i, index) => (
-                <Button
-                  key={index}
-                  backgroundColor={"white"}
-                  color={"black"}
-                  onClick={() => {
-                    changePage(index + 1);
-                    console.log(`${index + 1}`);
-                  }}
-                >
-                  {index + 1}
-                </Button>
-              ))}
-              ;
-            </HStack>
-          </>
-        )}
-      </Container>
-    </>
+          <HStack wrap={"wrap"} py={"4"} justifyContent={"space-evenly"}>
+            {coins.map((i) => (
+              <CoinCard
+                id={i.id}
+                key={i.id}
+                name={i.name}
+                image={i.image}
+                price={i.current_price}
+                symbol={i.symbol}
+                currencySymbol={currencySymbol}
+              />
+            ))}
+          </HStack>
+          <Text
+            textAlign={"center"}
+            fontWeight={"bold"}
+            textDecoration={"underline"}
+            color={"red"}
+          >
+            {page}
+          </Text>
+          <HStack w={"full"} px={"8"} py={"4"} overflowX={"scroll"}>
+            {btns.map((i, index) => (
+              <Button
+                key={index}
+                backgroundColor={"white"}
+                color={"black"}
+                onClick={() => {
+                  changePage(index + 1);
+                  console.log(`${index + 1}`);
+                }}
+              >
+                {index + 1}
+              </Button>
+            ))}
+          </HStack>
+        </>
+      )}
+    </Container>
   );
 };
 
